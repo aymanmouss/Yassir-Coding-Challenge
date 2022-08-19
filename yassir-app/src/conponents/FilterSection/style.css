@@ -1,0 +1,15 @@
+.filter-section {
+  display: flex;
+  flex-direction: column;
+}
+.filter-section-title {
+  margin-left: 20px;
+}
+.filter-section-tags {
+  display: flex;
+  align-self: flex-start;
+}
+.filter-section-dropDown {
+  display: flex;
+  align-items: flex-start;
+}

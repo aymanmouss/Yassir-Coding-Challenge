@@ -1,0 +1,10 @@
+/* header style */
+.header {
+  display: flex;
+  flex-direction: row;
+}
+.columnSide {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}

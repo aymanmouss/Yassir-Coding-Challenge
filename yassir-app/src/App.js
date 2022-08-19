@@ -1,11 +1,20 @@
 import "./App.css";
+import TopBar from "./conponents/TopBar";
+import SideBar from "./conponents/SideBar";
+import SearchSection from "./conponents/SearchSection";
+import FilterSection from "./conponents/FilterSection";
 
 function App() {
   return (
     <div className='App'>
-      <header className='App-header'>
-        <p>Hello world</p>
-      </header>
+      <div className='header'>
+        <SideBar />
+        <div className='columnSide'>
+          <TopBar />
+          <SearchSection />
+          <FilterSection />
+        </div>
+      </div>
     </div>
   );
 }

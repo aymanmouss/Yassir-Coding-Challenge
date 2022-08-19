@@ -1,0 +1,36 @@
+.dropDown {
+  margin-left: 20px;
+  margin-top: 20px;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 20px;
+  min-width: 150px;
+}
+.dropDown-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  cursor: pointer;
+  margin: 0;
+}
+.dropDown-list {
+  list-style-type: none;
+  padding: 0;
+}
+.dropDown-list-item:hover {
+  border: 1px solid #ced4da;
+  border-radius: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  font-size: 21px;
+  background-color: #edecfc;
+  cursor: pointer;
+}
+.dropDown-list-item:not(:last-child) {
+  margin-bottom: 10px;
+}
