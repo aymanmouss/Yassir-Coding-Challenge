@@ -7,7 +7,7 @@ function DropDown({ filterName, filterData }) {
   return (
     <div className='dropDown'>
       <p className='dropDown-title' onClick={() => setDrop(!drop)}>
-        {dropValue} <i class='fa-solid fa-caret-down'></i>
+        {filterName} <i class='fa-solid fa-caret-down'></i>
       </p>
       {drop && (
         <ul className='dropDown-list'>
