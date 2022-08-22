@@ -1,15 +1,11 @@
 import React from "react";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { closeTag } from "../../redux/bookingSlice";
 import Tags from "../Tags";
 import "./style.css";
 function DropDown({ filterName, filterData, setValue }) {
   const [tag, setTag] = useState(false);
   const [drop, setDrop] = useState(false);
   const [dropValue, setDropValue] = useState(filterName);
-  const tagState = useSelector((state) => state.filter.setTag);
-  const dispatch = useDispatch();
 
   return (
     <div>

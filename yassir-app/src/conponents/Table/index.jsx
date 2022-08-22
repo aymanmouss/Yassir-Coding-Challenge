@@ -1,11 +1,20 @@
 import React from "react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getBookingData } from "../../redux/bookingSlice";
 import "./style.css";
 function Table() {
+  const bookingDatas = useSelector((state) => state.bookingData);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getBookingData());
+  }, []);
   return (
     <div>
-      <table>
-        <thead>
-          <tr>
+      {console.log(bookingDatas)}
+      <table className='table'>
+        <thead className='table-header'>
+          <tr className='table-header'>
             <th>#</th>
             <th onClick={() => console.log("clicked")}>First Name</th>
             <th>Last Name</th>
@@ -17,8 +26,8 @@ function Table() {
             <th>GuestNotes</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
+        <tbody className='table-body'>
+          <tr className='table-row'>
             <td data-column='id'>1</td>
             <td className='table-data-blue' data-column='First Name'>
               Yuri
@@ -33,7 +42,7 @@ function Table() {
             <td data-column='Timeline'>Timeline</td>
             <td data-column='GuestNotes'>Likes the blue cheese burguer</td>
           </tr>
-          <tr>
+          <tr className='table-row'>
             <td data-column='id'>1</td>
             <td className='table-data-blue' data-column='First Name'>
               Yuri
@@ -48,7 +57,7 @@ function Table() {
             <td data-column='Timeline'>Timeline</td>
             <td data-column='GuestNotes'>Likes the blue cheese burguer</td>
           </tr>
-          <tr>
+          <tr className='table-row'>
             <td data-column='id'>1</td>
             <td className='table-data-blue' data-column='First Name'>
               Yuri
@@ -63,7 +72,7 @@ function Table() {
             <td data-column='Timeline'>Timeline</td>
             <td data-column='GuestNotes'>Likes the blue cheese burguer</td>
           </tr>
-          <tr>
+          <tr className='table-row'>
             <td data-column='id'>1</td>
             <td className='table-data-blue' data-column='First Name'>
               Yuri
@@ -78,7 +87,7 @@ function Table() {
             <td data-column='Timeline'>Timeline</td>
             <td data-column='GuestNotes'>Likes the blue cheese burguer</td>
           </tr>
-          <tr>
+          <tr className='table-row'>
             <td data-column='id'>1</td>
             <td className='table-data-blue' data-column='First Name'>
               Yuri
