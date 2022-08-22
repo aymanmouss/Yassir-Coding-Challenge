@@ -1,12 +1,19 @@
 import React from "react";
 import "./style.css";
-function Tags({ tagName, filter }) {
+function Tags({ tagName, filter, setTag }) {
   return (
-    <p className='tags'>
-      <span className='filter-tag'>{filter}</span>{" "}
-      <span className='name-tag'>{tagName}</span>
-      <i className='fa-solid fa-xmark'></i>
-    </p>
+    <div className='tags'>
+      <div className='tags-container'>
+        <span className='filter-tag'>{filter}</span>{" "}
+        <span className='name-tag'>{tagName}</span>
+      </div>
+      <i
+        className='fa-solid fa-xmark'
+        onClick={() => {
+          setTag(false);
+        }}
+      ></i>
+    </div>
   );
 }
 

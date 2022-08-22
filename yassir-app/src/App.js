@@ -3,6 +3,7 @@ import TopBar from "./conponents/TopBar";
 import SideBar from "./conponents/SideBar";
 import SearchSection from "./conponents/SearchSection";
 import FilterSection from "./conponents/FilterSection";
+import Table from "./conponents/Table";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <TopBar />
           <SearchSection />
           <FilterSection />
+          <Table />
         </div>
       </div>
     </div>

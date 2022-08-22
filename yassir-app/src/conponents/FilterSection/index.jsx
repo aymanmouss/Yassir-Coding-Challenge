@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import DropDown from "../DropDown";
 import Tags from "../Tags";
 import { status } from "../../data/data";
@@ -7,19 +7,26 @@ import { shifts } from "../../data/data";
 import { area } from "../../data/data";
 import "./style.css";
 function FilterSection() {
+  const [tagStatus, seTagStatus] = useState("");
+  const [tagDate, seTagDate] = useState("");
+  const [tagShift, seTagShift] = useState("");
+  const [tagArea, seTagArea] = useState("");
   return (
     <div className='filter-section'>
-      <p className='filter-section-title'>Filter:</p>
-      <div className='filter-section-tags'>
-        <Tags filter={"Date: "} tagName={"Headers"} />
-        <Tags filter={"Date: "} tagName={"Headers"} />
-        <Tags filter={"Date: "} tagName={"Headers"} />
-      </div>
+      <p className='filter-section-title'>Filter by:</p>
       <div className='filter-section-dropDown'>
-        <DropDown filterName={"Status"} filterData={status} />
-        <DropDown filterName={"Date"} filterData={date} />
-        <DropDown filterName={"Shifts"} filterData={shifts} />
-        <DropDown filterName={"Area"} filterData={area} />
+        <DropDown
+          filterName={"Status"}
+          filterData={status}
+          setValue={seTagStatus}
+        />
+        <DropDown filterName={"Date"} filterData={date} setValue={seTagDate} />
+        <DropDown
+          filterName={"Shifts"}
+          filterData={shifts}
+          setValue={seTagShift}
+        />
+        <DropDown filterName={"Area"} filterData={area} setValue={seTagArea} />
       </div>
     </div>
   );

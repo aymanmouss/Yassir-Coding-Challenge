@@ -37,3 +37,27 @@
   color: #868fa0;
   cursor: pointer;
 }
+.m-container {
+  display: flex;
+  align-items: center;
+}
+.fa-bars.m-topbar-icon {
+  margin-left: 10px;
+  font-size: 25px;
+  color: #868f9f;
+}
+.topBar-logo {
+  width: 130px;
+  margin-left: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .title {
+    display: none;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .m-container {
+    display: none;
+  }
+}

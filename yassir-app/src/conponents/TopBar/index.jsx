@@ -1,9 +1,14 @@
 import React from "react";
 import "./style.css";
+import logo from "../../assets/yassir-logo-vector.svg";
 function TopBar() {
   return (
     <div className='topbar'>
-      <h1 className='title'>Yassir</h1>
+      <div className='m-container'>
+        <i className='fa-solid fa-bars m-topbar-icon'></i>
+        <img src={logo} alt='yassir-logo' className='topBar-logo' />
+      </div>
+      <h1 className='title'>YASSIR</h1>
       <div className='topbar-info'>
         <i className='fa-solid fa-circle-info'></i>
         <div className='topbar-notifications'>
