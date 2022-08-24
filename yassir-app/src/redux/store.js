@@ -1,7 +1,20 @@
 import { configureStore } from "@reduxjs/toolkit";
-import bookingReducer from "./bookingSlice";
+import searchBooking, {
+  filterStatus,
+  filterDate,
+  filterShift,
+  filterArea,
+  changeFiltreState,
+  changeTagsState,
+} from "./bookingSlice";
 export const store = configureStore({
   reducer: {
-    booking: bookingReducer,
+    booking: searchBooking,
+    filterStatus,
+    filterDate,
+    filterShift,
+    filterArea,
+    changeFiltreState,
+    changeTagsState,
   },
 });

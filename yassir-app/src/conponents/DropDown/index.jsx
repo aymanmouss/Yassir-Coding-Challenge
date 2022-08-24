@@ -1,12 +1,16 @@
 import React from "react";
+import { useEffect } from "react";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { changeFiltreState } from "../../redux/bookingSlice";
 import Tags from "../Tags";
 import "./style.css";
 function DropDown({ filterName, filterData, setValue }) {
+  const dispatch = useDispatch();
   const [tag, setTag] = useState(false);
   const [drop, setDrop] = useState(false);
   const [dropValue, setDropValue] = useState(filterName);
-
+  const tagsState = useSelector((state) => state.booking.tagsState);
   return (
     <div>
       <div className='dropDown'>
@@ -25,6 +29,7 @@ function DropDown({ filterName, filterData, setValue }) {
                     setDropValue(item);
                     setDrop(false);
                     setTag(true);
+                    dispatch(changeFiltreState(true));
                   }}
                 >
                   {item}
@@ -34,7 +39,9 @@ function DropDown({ filterName, filterData, setValue }) {
           </ul>
         )}
       </div>
-      {tag && <Tags filter={"Status: "} tagName={dropValue} setTag={setTag} />}
+      {/* {tag && (
+        <Tags filter={filterName + ":"} tagName={dropValue} setTag={setTag} />
+      )} */}
     </div>
   );
 }

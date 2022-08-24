@@ -2,11 +2,10 @@
   background-color: #ededfc;
   padding: 6px 10px;
   border-radius: 4px;
-  display: flex;
   align-items: center;
   margin: 20px 0 0 20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 .filter-tag {
   color: #5e5adb;
@@ -15,8 +14,8 @@
   color: #151357;
   margin-left: 5px;
 }
-.fa-xmark {
+.fa-tag {
   color: #868fa0;
-  margin-left: 7px;
+  margin-right: 10px;
   margin-top: 3px;
 }

@@ -7,9 +7,10 @@
   line-height: 1.5;
   background-clip: padding-box;
   border: 1px solid #ced4da;
-  border-radius: 4px;
+  border-radius: 4px 4px 0 0;
   font-size: 20px;
   min-width: 150px;
+  position: relative;
 }
 .dropDown-title {
   display: flex;
@@ -22,14 +23,29 @@
 .dropDown-list {
   list-style-type: none;
   padding: 0;
+  position: absolute;
+  background-color: #fff;
+  z-index: 99;
+  width: 100%;
+  border: 1px solid #ced4da;
+  left: -1px;
+  top: 22px;
 }
 .dropDown-list-item:hover {
   border: 1px solid #ced4da;
   border-radius: 0.375rem;
   padding: 0.375rem 0.75rem;
-  font-size: 21px;
   background-color: #edecfc;
   cursor: pointer;
+}
+.dropDown-list-item:first-child {
+  margin: 10px;
+}
+.dropDown-list-item:last-child {
+  margin: 10px;
+}
+.dropDown-list-item {
+  margin-left: 10px;
 }
 .dropDown-list-item:not(:last-child) {
   margin-bottom: 10px;

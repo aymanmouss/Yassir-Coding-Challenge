@@ -1,21 +1,59 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
 
-export const getBookingData = createAsyncThunk("booking/data", () => {
-  return axios.get("../serverResponse.json").then((response) => response.data);
-});
+export const getBookingData = createAsyncThunk(
+  "booking/getBookingData",
+  async (_, thunkApi) => {
+    try {
+      const res = await fetch("http://localhost:5500/serverResponse.json");
+      const data = await res.json();
+      return data;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+);
 
 const initialState = {
   bookingData: [],
   isLoading: false,
   err: null,
+  searchValue: "",
+  tagStatus: "",
+  tagDate: "",
+  tagShift: "",
+  tagArea: "",
+  filtreState: false,
+  tagsState: false,
 };
 
 export const bookingSlice = createSlice({
   name: "booking",
   initialState,
+  reducers: {
+    search: (state, action) => {
+      state.searchValue = action.payload;
+    },
+    filterStatus: (state, action) => {
+      state.tagStatus = action.payload;
+    },
+    filterDate: (state, action) => {
+      state.tagDate = action.payload;
+    },
+    filterShift: (state, action) => {
+      state.tagShift = action.payload;
+    },
+    filterArea: (state, action) => {
+      state.tagArea = action.payload;
+    },
+    changeFiltreState: (state, action) => {
+      state.filtreState = action.payload;
+    },
+    changeTagsState: (state, action) => {
+      state.tagsState = action.payload;
+    },
+  },
   extraReducers: {
-    [getBookingData.pending]: (state) => {
+    [getBookingData.pending]: (state, action) => {
       state.isLoading = true;
     },
     [getBookingData.fulfilled]: (state, action) => {
@@ -30,5 +68,13 @@ export const bookingSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-
+export const {
+  search,
+  filterStatus,
+  filterDate,
+  filterShift,
+  filterArea,
+  changeFiltreState,
+  changeTagsState,
+} = bookingSlice.actions;
 export default bookingSlice.reducer;

@@ -4,6 +4,7 @@
 }
 .filter-section-title {
   margin-left: 20px;
+  margin-bottom: 0;
 }
 .filter-section-tags {
   display: flex;
@@ -13,6 +14,13 @@
   display: flex;
   align-items: flex-start;
   flex-wrap: wrap;
+}
+.dropDown.btn-dropDown {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #5d5ada;
+  color: #fff;
 }
 @media only screen and (max-width: 600px) {
   .filter-section {
