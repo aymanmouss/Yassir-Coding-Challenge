@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./style.css";
 const Pagination = ({ dataPerPage, totalemployees, paginate }) => {
   const pageNumbers = [];
+  // create a list of pages number
   for (let i = 1; i <= Math.ceil(totalemployees / dataPerPage); i++) {
     pageNumbers.push(i);
   }
@@ -12,8 +13,7 @@ const Pagination = ({ dataPerPage, totalemployees, paginate }) => {
           <div key={index}>
             <p
               className='pagination-link'
-              onClick={(e) => {
-                e.preventDefault();
+              onClick={() => {
                 paginate(number);
               }}
             >

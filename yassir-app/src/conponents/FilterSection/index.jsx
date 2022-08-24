@@ -11,20 +11,22 @@ import {
   filterStatus,
 } from "../../redux/bookingSlice";
 import "./style.css";
+// Value clicked of dropDown menue
 function FilterSection() {
   const [tagStatus, seTagStatus] = useState("");
   const [tagDate, seTagDate] = useState("");
   const [tagShift, seTagShift] = useState("");
   const [tagArea, seTagArea] = useState("");
   const dispatch = useDispatch();
-  // filterStatus, filterDate, filterShift, filterArea
 
+  //this is to sheare and store all the dropdown values in redux Store
   useEffect(() => {
     dispatch(filterStatus(tagStatus));
     dispatch(filterDate(tagDate));
     dispatch(filterShift(tagShift));
     dispatch(filterArea(tagArea));
   }, [dispatch, tagStatus, tagDate, tagShift, tagArea]);
+  // We have fatched the filter state to remove the btn after clearing the filter
   const filtreState = useSelector((state) => state.booking.filtreState);
   return (
     <div className='filter-section'>

@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
+// We used createAsyncThunk as midelware to fetch data
 export const getBookingData = createAsyncThunk(
   "booking/getBookingData",
   async (_, thunkAPI) => {

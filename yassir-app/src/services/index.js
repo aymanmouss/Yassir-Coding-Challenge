@@ -23,6 +23,7 @@ const filter = (data, tagStatus, tagShift, tagArea, search, tagDate) => {
         val.id.toString().indexOf(search) > -1
     );
 };
+// filter by customer name and las name
 const sortingNames = (col, setOrder, order, data, setData, col2) => {
   if (order === "ASC") {
     const soreted = [...data].sort((a, b) =>
@@ -40,6 +41,7 @@ const sortingNames = (col, setOrder, order, data, setData, col2) => {
     setOrder("ASC");
   }
 };
+// data filtering
 const sorting = (col, setOrder, order, data, setData) => {
   if (order === "ASC") {
     const soreted = [...data].sort((a, b) => (a[col] > b[col] ? 1 : -1));

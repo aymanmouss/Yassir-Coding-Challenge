@@ -53,6 +53,7 @@ function Table() {
 
   return (
     <div>
+      {/* sorting list for mobile */}
       <TableKeys
         setOrder={setOrder}
         order={order}
@@ -130,13 +131,7 @@ function Table() {
               </th>
               <th
                 onClick={() => {
-                  service.sorting(
-                    "businessDate",
-                    setOrder,
-                    order,
-                    data,
-                    setData
-                  );
+                  service.sorting("start", setOrder, order, data, setData);
                 }}
               >
                 Timeline <i className='fa-solid fa-sort'></i>
@@ -177,6 +172,7 @@ function Table() {
           </tbody>
         </table>
       )}
+      {/* pagination */}
       <div className='table-footer'>
         <div className='dropDown-pagination'>
           <p className='dropDown-title' onClick={() => setDrop(!drop)}>
