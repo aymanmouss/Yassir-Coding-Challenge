@@ -65,14 +65,15 @@ function TableKeys({ setOrder, order, data, setData }) {
           </li>
           <li
             onClick={() => {
-              service.sorting(
-                "customer.firstName",
+              service.sortingNames(
+                "customer",
                 setOrder,
                 order,
                 data,
-                setData
+                setData,
+                "firstName"
               );
-              setSortKey("customer.firstName");
+              setSortKey("First Name");
               setDrop(false);
             }}
             className='dropDown-list-item'
@@ -81,14 +82,15 @@ function TableKeys({ setOrder, order, data, setData }) {
           </li>
           <li
             onClick={() => {
-              service.sorting(
-                "customer.lastName",
+              service.sortingNames(
+                "customer",
                 setOrder,
                 order,
                 data,
-                setData
+                setData,
+                "lastName"
               );
-              setSortKey("customer.lastName");
+              setSortKey("Last Name");
               setDrop(false);
             }}
             className='dropDown-list-item'

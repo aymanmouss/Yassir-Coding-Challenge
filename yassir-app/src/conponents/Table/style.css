@@ -1,4 +1,4 @@
-table {
+.table {
   width: 100%;
   border-collapse: collapse;
   margin: 30px auto;
@@ -29,7 +29,7 @@ This query will take effect for any screen smaller than 760px
 and also iPads specifically.
 */
 @media only screen and (max-width: 960px) {
-  table {
+  .table {
     width: 100%;
   }
 
@@ -46,11 +46,7 @@ and also iPads specifically.
   /* Hide table headers (but not display: none;, for accessibility) */
   thead tr {
     position: absolute;
-    top: -9999px;
-    left: -9999px;
-  }
-  tr {
-    /* border: 1px solid #ccc; */
+    display: none;
   }
 
   td {
