@@ -25,7 +25,7 @@ function Table() {
   const tagShift = useSelector((state) => state.booking.tagShift);
   const tagArea = useSelector((state) => state.booking.tagArea);
 
-  // Reservations Data
+  // all fetched data Data
   const [data, setData] = useState([]);
 
   // this variable is used to switsh sorting
