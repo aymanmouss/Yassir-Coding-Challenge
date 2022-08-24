@@ -4,6 +4,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: auto;
+  padding-bottom: 100vh;
 }
 .sideBar-logo {
   width: 80px;

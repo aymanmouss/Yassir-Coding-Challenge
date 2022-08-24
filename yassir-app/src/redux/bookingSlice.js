@@ -4,7 +4,7 @@ export const getBookingData = createAsyncThunk(
   "booking/getBookingData",
   async (_, thunkApi) => {
     try {
-      const res = await fetch("http://localhost:5500/serverResponse.json");
+      const res = await fetch("https://api.npoint.io/876b18332149c3f39cea");
       const data = await res.json();
       return data;
     } catch (error) {

@@ -56,8 +56,13 @@
     display: none;
   }
 }
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 601px) {
   .m-container {
+    display: none;
+  }
+}
+@media only screen and (max-width: 290px) {
+  .topbar-info {
     display: none;
   }
 }

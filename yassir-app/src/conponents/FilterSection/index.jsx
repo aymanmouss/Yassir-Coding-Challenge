@@ -53,7 +53,7 @@ function FilterSection() {
               dispatch(changeFiltreState(false));
             }}
           >
-            <i class='fa-solid fa-xmark'></i>
+            <i className='fa-solid fa-xmark'></i>
             <p className='dropDown-title'>Clera All Filter</p>
           </div>
         )}
