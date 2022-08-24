@@ -53,7 +53,7 @@ function Table() {
 
   return (
     <div>
-      {/* sorting list for mobile */}
+      {/* sorting list for mobile display only */}
       <TableKeys
         setOrder={setOrder}
         order={order}
