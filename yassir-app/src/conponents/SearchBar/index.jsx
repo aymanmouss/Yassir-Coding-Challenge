@@ -12,6 +12,7 @@ function SearchBar() {
       <input
         type='seach'
         id='search'
+        placeholder='Search by Name and ID'
         onChange={(e) => dispatch(search(e.target.value))}
       />
     </div>
