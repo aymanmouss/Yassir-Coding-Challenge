@@ -2,13 +2,14 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 export const getBookingData = createAsyncThunk(
   "booking/getBookingData",
-  async (_, thunkApi) => {
+  async (_, thunkAPI) => {
+    const { rejectWithValue } = thunkAPI;
     try {
       const res = await fetch("https://api.npoint.io/876b18332149c3f39cea");
       const data = await res.json();
       return data;
     } catch (error) {
-      console.log(error);
+      return rejectWithValue(error.message);
     }
   }
 );
