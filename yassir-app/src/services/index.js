@@ -23,25 +23,40 @@ const filter = (data, tagStatus, tagShift, tagArea, search, tagDate) => {
         val.id.toString().indexOf(search) > -1
     );
 };
-
-const sorting = (col, setOrder, order, data, setData) => {
+const sortingNames = (col, setOrder, order, data, setData, col2) => {
   if (order === "ASC") {
     const soreted = [...data].sort((a, b) =>
-      a.col?.toLowerCase() > b.col?.toLowerCase() ? 1 : -1
+      a[col][col2] > b[col][col2] ? 1 : -1
     );
+
     setData(soreted);
     setOrder("DSC");
   }
   if (order === "DSC") {
     const soreted = [...data].sort((a, b) =>
-      a.col?.toLowerCase() < b.col?.toLowerCase() ? 1 : -1
+      a[col][col2] < b[col][col2] ? 1 : -1
     );
     setData(soreted);
     setOrder("ASC");
   }
 };
+const sorting = (col, setOrder, order, data, setData) => {
+  if (order === "ASC") {
+    const soreted = [...data].sort((a, b) => (a[col] > b[col] ? 1 : -1));
+
+    setData(soreted);
+    setOrder("DSC");
+  }
+  if (order === "DSC") {
+    const soreted = [...data].sort((a, b) => (a[col] < b[col] ? 1 : -1));
+    setData(soreted);
+    setOrder("ASC");
+  }
+};
+
 const service = {
   filter,
   sorting,
+  sortingNames,
 };
 export default service;

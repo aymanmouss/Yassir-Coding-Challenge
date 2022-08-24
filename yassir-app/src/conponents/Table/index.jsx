@@ -33,7 +33,7 @@ function Table() {
 
   // pagination
   const [currentPage, setCurrentPage] = useState(1);
-  const [dataPerPage, setDataPerPage] = useState(5);
+  const [dataPerPage, setDataPerPage] = useState(10);
   const indexOfLastPage = currentPage * dataPerPage;
   const indexOfFirsData = indexOfLastPage - dataPerPage;
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
@@ -70,61 +70,63 @@ function Table() {
                   service.sorting("id", setOrder, order, data, setData);
                 }}
               >
-                #
+                # <i className='fa-solid fa-sort'></i>
               </th>
               <th
                 onClick={() => {
-                  service.sorting(
-                    "customer.firstName",
+                  service.sortingNames(
+                    "customer",
                     setOrder,
                     order,
                     data,
-                    setData
+                    setData,
+                    "firstName"
                   );
                 }}
               >
-                First Name
+                First Name <i className='fa-solid fa-sort'></i>
               </th>
               <th
                 onClick={() => {
-                  service.sorting(
-                    "customer.lastName",
+                  service.sortingNames(
+                    "customer",
                     setOrder,
                     order,
                     data,
-                    setData
+                    setData,
+                    "lastName"
                   );
                 }}
               >
-                Last Name
+                Last Name <i className='fa-solid fa-sort'></i>
               </th>
               <th
                 onClick={() => {
                   service.sorting("quantity", setOrder, order, data, setData);
                 }}
               >
-                Quantity
+                Quantity <i className='fa-solid fa-sort'></i>
               </th>
               <th
                 onClick={() => {
                   service.sorting("area", setOrder, order, data, setData);
                 }}
               >
-                Area
+                Area <i className='fa-solid fa-sort'></i>
               </th>
               <th
                 onClick={() => {
                   service.sorting("shift", setOrder, order, data, setData);
                 }}
               >
-                Shift
+                Shift <i className='fa-solid fa-sort'></i>
               </th>
               <th
                 onClick={() => {
                   service.sorting("status", setOrder, order, data, setData);
                 }}
               >
-                status
+                status <i className='fa-solid fa-sort'></i>
               </th>
               <th
                 onClick={() => {
@@ -137,14 +139,14 @@ function Table() {
                   );
                 }}
               >
-                Timeline
+                Timeline <i className='fa-solid fa-sort'></i>
               </th>
               <th
                 onClick={() => {
                   service.sorting("guestNotes", setOrder, order, data, setData);
                 }}
               >
-                GuestNotes
+                GuestNotes <i className='fa-solid fa-sort'></i>
               </th>
             </tr>
           </thead>
