@@ -24,13 +24,13 @@ function TableKeys({ setOrder, order, data, setData }) {
           </li>
           <li
             onClick={() => {
-              service.sorting("businessDate", setOrder, order, data, setData);
-              setSortKey("Business Date");
+              service.sorting("start", setOrder, order, data, setData);
+              setSortKey("Timeline");
               setDrop(false);
             }}
             className='dropDown-list-item'
           >
-            Business Date
+            Timeline
           </li>
           <li
             onClick={() => {
